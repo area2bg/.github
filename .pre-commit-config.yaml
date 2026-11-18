@@ -1,0 +1,8 @@
+# Hooks de pre-commit. Activar en cada clon con:  pre-commit install
+# gitleaks bloquea el commit si lo que se va a commitear contiene un secreto (el pipeline revisa ademas todo el historial).
+# Falso positivo: comentario `gitleaks:allow` en la linea, o su fingerprint en .gitleaksignore (revisado en el PR/commit).
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
